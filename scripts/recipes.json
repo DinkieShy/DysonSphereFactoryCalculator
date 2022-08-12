@@ -1,0 +1,33 @@
+[
+
+{"Small Carrier Rocket": [10, ["Quantum Chip", 20], ["Deuteron Fuel Rod", 40], ["Dyson Sphere Component", 20]]},
+{"Quantum Chip": [10, ["Processor", 20], ["Plane Filter", 20]]},
+{"Processor": [20, ["Circuit", 40], ["Microcrystalline Component", 40]]},
+{"Circuit": [120, ["Iron", 120], ["Copper", 60]]},
+{"Titanium": [30, ["Titanium Ore", 60]]},
+{"Iron": [60, ["Iron Ore", 60]]},
+{"Copper": [60, ["Copper Ore", 60]]},
+{"Steel": [20, ["Iron", 60]]},
+{"Magnet": [40, ["Iron Ore", 40]]},
+{"Glass": [30, ["Stone", 60]]},
+{"Gear": [60, ["Iron", 60]]},
+{"Microcrystalline Component": [30, ["High-Purity Silicon", 60], ["Copper", 60]]},
+{"High-Purity Silicon": [30, ["Silicon Ore", 60]]},
+{"Deuteron Fuel Rod": [10, ["Titanium Alloy", 5], ["Deuterium", 200], ["Super Magnetic Ring", 5]]},
+{"Dyson Sphere Component": [7.5, ["Frame Material", 22.5], ["Solar Sail", 22.5], ["Processor", 22.5]]},
+{"Plane Filter": [5, ["Casimir Crystal", 5], ["Titanium Glass", 10]]},
+{"Titanium Alloy": [20, ["Titanium", 20], ["Steel", 20], ["Sulphuric Acid", 40]]},
+{"Deuterium": [120, ["Hydrogen", 240]]},
+{"Super Magnetic Ring": [20, ["Electromagnetic Turbine", 40], ["Magnet", 60], ["Energetic Graphite", 20]]},
+{"Frame Material": [10, ["Carbon Nanotubes", 40], ["Titanium Alloy", 10], ["High-Purity Silicon", 10]]},
+{"Solar Sail": [30, ["Graphene", 15], ["Photon Combiner", 15]]},
+{"Casimir Crystal": [15, ["Optical Grating Crystal", 120]]},
+{"Titanium Glass": [24, ["Glass", 24], ["Titanium", 24], ["Water", 24]]},
+{"Electromagnetic Turbine": [30, ["Electric Motor", 60], ["Magnetic Coil", 30]]},
+{"Carbon Nanotubes": [30, ["Spiniform Stalagmite Crystal", 90]]},
+{"Energetic Graphite": [15, ["Crude Oil", 30]]},
+{"Photon Combiner": [20, ["Optical Grating Crystal", 20], ["Circuit", 20]]},
+{"Electric Motor": [30, ["Iron", 60], ["Gear", 30], ["Magnetic Coil", 30]]},
+{"Magnetic Coil": [120, ["Magnet", 120], ["Copper", 60]]}
+
+]
