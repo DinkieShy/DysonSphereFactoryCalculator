@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 var items = {};
-const rawRecipes = ["Iron Ore", "Copper Ore", "Silicon Ore", "Optical Grating Crystal", "Water", "Sulphuric Acid", "Titanium Ore", "Spiniform Stalagmite Crystal", "Hydrogen", "Crude Oil", "Graphene", "Stone"];
+const rawRecipes = ["Iron Ore", "Copper Ore", "Silicon Ore", "Optical Grating Crystal", "Water", "Sulphuric Acid", "Titanium Ore", "Spiniform Stalagmite Crystal", "Hydrogen", "Crude Oil", "Graphene", "Stone", "Coal"];
 
 class Recipe{
 	constructor(recipe){
@@ -66,4 +66,5 @@ async function main(desiredItem, desiredRate){
 	console.log(rawRequired);
 }
 
-main("Small Carrier Rocket", 120);
+main("Organic Crystal", 50);
+// main("Electromagnetic Turbine", 100);
