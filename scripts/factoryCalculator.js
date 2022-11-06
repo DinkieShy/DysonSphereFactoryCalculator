@@ -20,10 +20,10 @@ async function calculateMachines(item, rate, factory = [], madeFor = ""){
 	}
 	var machines = Math.round(rate/items[item].madePerMin);
 	if(madeFor != ""){
-		factory.push([item, machines, madeFor]);
+		factory.push([item, machines, madeFor, rate]);
 	}
 	else{
-		factory.push([item, machines]);
+		factory.push([item, machines, "", rate]);
 	}
 	var requirements = items[item].requirements;
 	for(var i = 0; i < requirements.length; i++){
@@ -50,7 +50,7 @@ async function main(desiredItem, desiredRate){
 	}
 	var machinesRequired = await calculateMachines(desiredItem, desiredRate);
 	machinesRequired.sort(compareArray);
-	// console.log(machinesRequired);
+	console.log();
 	await prettyPrintList(machinesRequired);
 	var rawRequired = {};
 	for(var i = 0; i < machinesRequired.length; i++){
@@ -68,6 +68,8 @@ async function main(desiredItem, desiredRate){
 }
 
 async function prettyPrintList(recipeList){
+	var longestName = -1;
+	recipeList.forEach((item) => {if(longestName < item[0].length){longestName = item[0].length;}});
 	var lastItem = "This can be any string lmao";
 	var currentIndent = -1;
 	var indents = {};
@@ -87,10 +89,10 @@ async function prettyPrintList(recipeList){
 
 		lastItem = item;
 
-		console.log("  ".repeat(currentIndent) + `${item} -> ${recipeList[i][1]}`);
+		console.log(" ".repeat(currentIndent) + (`${item} `).padEnd(longestName+5-currentIndent, "-") + `-> ${!rawRecipes.includes(item) ? recipeList[i][1] + "\t" + recipeList[i][3] + "/min":"\t" + recipeList[i][1] +"/min"}`);
 	}
 
 	return;
 }
 
-main("Sorter Mk.II", 120);
+main("Information Matrix", 100);
