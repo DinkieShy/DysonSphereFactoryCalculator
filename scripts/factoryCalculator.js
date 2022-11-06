@@ -77,19 +77,16 @@ async function prettyPrintList(recipeList){
 	for(var i = 0; i < recipeList.length; i++){
 		var item = recipeList[i][0];
 		var parent = recipeList[i][2];
-
-		if(!Object.keys(indents).includes(parent)){
-			// if parent of current item not already printed
+		if(!Object.keys(indents).includes(parent)){ // if parent of current item not already printed
 			indents[parent] = currentIndent;
 			currentIndent++;
 		}
 		else{
 			currentIndent = indents[parent] + 1
 		}
-
 		lastItem = item;
 
-		console.log(" ".repeat(currentIndent) + (`${item} `).padEnd(longestName+5-currentIndent, "-") + `-> ${!rawRecipes.includes(item) ? recipeList[i][1] + "\t" + recipeList[i][3] + "/min":"\t" + recipeList[i][1] +"/min"}`);
+		console.log(" ".repeat(currentIndent) + (`${item} `).padEnd(longestName+5-currentIndent, "-") + `-> ${!rawRecipes.includes(item) ? recipeList[i][1].toString().padStart(3) + "\t" + recipeList[i][3].toString().padStart(5) + "/min":"\t" + recipeList[i][1].toString().padStart(5) +"/min"}`);
 	}
 
 	return;
