@@ -50,7 +50,8 @@ async function main(desiredItem, desiredRate){
 	}
 	var machinesRequired = await calculateMachines(desiredItem, desiredRate);
 	machinesRequired.sort(compareArray);
-	console.log(machinesRequired);
+	// console.log(machinesRequired);
+	await prettyPrintList(machinesRequired);
 	var rawRequired = {};
 	for(var i = 0; i < machinesRequired.length; i++){
 		if(rawRecipes.includes(machinesRequired[i][0])){
@@ -66,4 +67,30 @@ async function main(desiredItem, desiredRate){
 	console.log(rawRequired);
 }
 
-main("Structure Matrix", 100);
+async function prettyPrintList(recipeList){
+	var lastItem = "This can be any string lmao";
+	var currentIndent = -1;
+	var indents = {};
+
+	for(var i = 0; i < recipeList.length; i++){
+		var item = recipeList[i][0];
+		var parent = recipeList[i][2];
+
+		if(!Object.keys(indents).includes(parent)){
+			// if parent of current item not already printed
+			indents[parent] = currentIndent;
+			currentIndent++;
+		}
+		else{
+			currentIndent = indents[parent] + 1
+		}
+
+		lastItem = item;
+
+		console.log("  ".repeat(currentIndent) + `${item} -> ${recipeList[i][1]}`);
+	}
+
+	return;
+}
+
+main("Sorter Mk.II", 120);
