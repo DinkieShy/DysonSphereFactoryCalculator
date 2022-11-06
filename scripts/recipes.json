@@ -47,12 +47,15 @@
 {"Prism": [60, ["Glass", 180]]},
 {"Graviton Lens": [10, ["Diamond", 40], ["Strange Matter", 10]]},
 {"Annihilation Constraint Sphere": [3, ["Particle Container", 3], ["Processor", 3]]},
-{"Diamond": [80, ["Kimberlite Ore", 40]]},
+{"Diamond": [30, ["Energetic Graphite", 30]]},
 {"Organic Crystal": [10, ["Plastic", 20], ["Refined Oil", 10], ["Water", 10]]},
+{"Solar Panel": [10, ["Copper", 100], ["High-Purity Silicon", 100], ["Circuit", 50]]},
 {"Proliferator Mk.I": [120, ["Coal", 120]]},
 {"Proliferator Mk.II": [60, ["Proliferator Mk.I", 120], ["Diamond", 60]]},
 {"Proliferator Mk.III": [30, ["Proliferator Mk.II", 60], ["Carbon Nanotubes", 30]]},
+{"Electromagnetic Matrix": [20, ["Magnetic Coil", 20], ["Circuit", 20]]},
 {"Energy Matrix": [10, ["Energetic Graphite", 20], ["Hydrogen", 20]]},
-{"Conveyor Belt Mk.II": [180, ["Conveyor Belt Mk.I", 180], ["Electromagnetic Turbine", 60]]},
-{"Conveyor Belt Mk.I": [180, ["Iron", 120], ["Gear", 60]]}
+{"Structure Matrix": [7.5, ["Diamond", 7.5], ["Titanium Crystal", 7.5]]},
+{"Conveyor Belt Mk.I": [180, ["Iron", 120], ["Gear", 60]]},
+{"Conveyor Belt Mk.II": [180, ["Conveyor Belt Mk.I", 180], ["Electromagnetic Turbine", 60]]}
 ]
