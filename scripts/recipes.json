@@ -1,5 +1,4 @@
 [
-
 {"Small Carrier Rocket": [10, ["Quantum Chip", 20], ["Deuteron Fuel Rod", 40], ["Dyson Sphere Component", 20]]},
 {"Quantum Chip": [10, ["Processor", 20], ["Plane Filter", 20]]},
 {"Processor": [20, ["Circuit", 40], ["Microcrystalline Component", 40]]},
@@ -32,7 +31,7 @@
 {"Stone Bricks": [60, ["Stone", 60]]},
 {"Plastic": [20, ["Refined Oil", 40], ["Energetic Graphite", 20]]},
 {"Plasma Exciter": [30, ["Magnetic Coil", 120],["Prism",60]]},
-{"Particle broardband": [7.5, ["Carbon Nanotubes", 15],["Crystal Silicon", 15], ["Plastic", 7.5]]},
+{"Particle Broadband": [7.5, ["Carbon Nanotubes", 15],["Crystal Silicon", 15], ["Plastic", 7.5]]},
 {"Particle Container": [15, ["Electromagnetic Turbine", 30],["Copper", 30], ["Graphene", 30]]},
 {"Space Warper": [6, ["Graviton Lens", 6]]},
 {"Titanium Crystal": [15, ["Organic Crystal", 15], ["Titanium", 45]]},
@@ -56,6 +55,12 @@
 {"Electromagnetic Matrix": [20, ["Magnetic Coil", 20], ["Circuit", 20]]},
 {"Energy Matrix": [10, ["Energetic Graphite", 20], ["Hydrogen", 20]]},
 {"Structure Matrix": [7.5, ["Diamond", 7.5], ["Titanium Crystal", 7.5]]},
+{"Information Matrix": [6, ["Processor", 12], ["Particle Broadband", 6]]},
 {"Conveyor Belt Mk.I": [180, ["Iron", 120], ["Gear", 60]]},
-{"Conveyor Belt Mk.II": [180, ["Conveyor Belt Mk.I", 180], ["Electromagnetic Turbine", 60]]}
+{"Conveyor Belt Mk.II": [180, ["Conveyor Belt Mk.I", 180], ["Electromagnetic Turbine", 60]]},
+{"Assembling Machine Mk.I": [30, ["Iron", 120], ["Gear", 240], ["Circuit", 120]]},
+{"Assembling Machine Mk.II": [20, ["Assembling Machine Mk.I", 20], ["Graphene", 160], ["Processor", 80]]},
+{"Sorter Mk.I": [60, ["Iron", 60], ["Circuit", 60]]},
+{"Sorter Mk.II": [120, ["Sorter Mk.I", 120], ["Electric Motor", 60]]},
+{"Sorter Mk.III": [120, ["Sorter Mk.II", 120], ["Electromagnetic Turbine", 60]]}
 ]
