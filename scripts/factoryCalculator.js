@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 var items = {};
-const rawRecipes = ["Iron Ore", "Copper Ore", "Silicon Ore", "Optical Grating Crystal", "Water", "Sulphuric Acid", "Titanium Ore", "Spiniform Stalagmite Crystal", "Hydrogen", "Crude Oil", "Graphene", "Stone", "Coal", "Kimberlite Ore"];
+const rawRecipes = ["Iron Ore", "Copper Ore", "Silicon Ore", "Optical Grating Crystal", "Water", "Sulphuric Acid", "Titanium Ore", "Spiniform Stalagmite Crystal", "Crude Oil", "Stone", "Coal", "Kimberlite Ore", "Fire Ice"];
 
 class Recipe{
 	constructor(recipe){
@@ -20,10 +20,10 @@ async function calculateMachines(item, rate, factory = [], madeFor = ""){
 	}
 	var machines = Math.round(rate/items[item].madePerMin);
 	if(madeFor != ""){
-		factory.push([item, machines, madeFor, rate]);
+		factory.push([item, machines, madeFor, machines*items[item].madePerMin]);
 	}
 	else{
-		factory.push([item, machines, "", rate]);
+		factory.push([item, machines, "", machines*items[item].madePerMin]);
 	}
 	var requirements = items[item].requirements;
 	for(var i = 0; i < requirements.length; i++){
@@ -48,6 +48,7 @@ async function main(desiredItem, desiredRate){
 		var value = itemList[i][key];
 		items[key] = new Recipe(value);
 	}
+	desiredRate = Math.ceil(desiredRate/items[desiredItem].madePerMin)*items[desiredItem].madePerMin;
 	var machinesRequired = await calculateMachines(desiredItem, desiredRate);
 	machinesRequired.sort(compareArray);
 	console.log();
