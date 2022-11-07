@@ -18,7 +18,7 @@ async function calculateMachines(item, rate, factory = [], madeFor = ""){
 	else if(items[item] == undefined){
 		return factory;
 	}
-	var machines = Math.round(rate/items[item].madePerMin);
+	var machines = Math.ceil(rate/items[item].madePerMin);
 	if(madeFor != ""){
 		factory.push([item, machines, madeFor, machines*items[item].madePerMin]);
 	}
@@ -48,7 +48,6 @@ async function main(desiredItem, desiredRate){
 		var value = itemList[i][key];
 		items[key] = new Recipe(value);
 	}
-	desiredRate = Math.ceil(desiredRate/items[desiredItem].madePerMin)*items[desiredItem].madePerMin;
 	var machinesRequired = await calculateMachines(desiredItem, desiredRate);
 	machinesRequired.sort(compareArray);
 	console.log();
@@ -87,10 +86,10 @@ async function prettyPrintList(recipeList){
 		}
 		lastItem = item;
 
-		console.log(" ".repeat(currentIndent) + (`${item} `).padEnd(longestName+5-currentIndent, "-") + `-> ${!rawRecipes.includes(item) ? recipeList[i][1].toString().padStart(3) + "\t" + recipeList[i][3].toString().padStart(5) + "/min":"\t" + recipeList[i][1].toString().padStart(5) +"/min"}`);
+		console.log("| ".repeat(currentIndent) + (`${item} `).padEnd(longestName+5-currentIndent, "-") + `-> ${!rawRecipes.includes(item) ? recipeList[i][1].toString().padStart(3) + "\t" + recipeList[i][3].toString().padStart(5) + "/min":"\t" + recipeList[i][1].toString().padStart(5) +"/min"}`);
 	}
 
 	return;
 }
 
-main("Information Matrix", 100);
+main("Structure Matrix", 100);
